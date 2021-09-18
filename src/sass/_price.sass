@@ -1,0 +1,66 @@
+.price
+    position: relative
+    z-index: 2
+    padding-top: 95px
+    &__block
+        margin-top: 55px
+    &__subtitle, summary
+        color: $second-color
+        font-size: 14px
+        font-weight: 700
+        line-height: 22px
+    summary
+        width: calc( 100% - 41px )
+        margin-top: 40px
+        border-bottom: solid 1px $second-color
+        position: relative
+        cursor: pointer
+        transition: 0.3s all
+        list-style: none
+        &:focus
+            outline: none
+        &::-webkit-details-marker
+            display: none
+        &::before
+            content: "+"
+            display: block
+            position: absolute
+            bottom: -3px
+            right: -32px
+            font-size: 30px
+            font-weight: 200
+            text-align: center
+            line-height: 21px
+            width: 21px
+            height: 21px
+            border-radius: 100%
+            color: $second-color
+            border: solid 1px $second-color
+            cursor: pointer
+        span:first-child
+            width: 162px
+            // word-wrap: break-word
+    details[open] summary::before
+        content: "—"
+        font-size: 14px
+        font-weight: 400
+        text-align: center
+        line-height: 21px
+        color: $second-color
+        cursor: pointer
+    details
+        ul
+            margin-top: 14px
+            li
+                color: $second-color
+                font-size: 12px
+                line-height: 18px
+    &__summary-wrapper
+        width: 100%
+        display: flex
+        justify-content: space-between
+        align-items: flex-end
+    &__value
+        width: 130px
+        text-align: right
+        letter-spacing: -0.4px
